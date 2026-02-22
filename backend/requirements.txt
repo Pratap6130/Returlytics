@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+pandas
+scikit-learn
+joblib
+pydantic
+xgboost
+category-encoders
+bcrypt
