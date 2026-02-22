@@ -1,3 +1,33 @@
+1) Activate virtual env (run in each terminal)
+
+Activate.ps1
+2) Install dependencies (one-time, in Terminal 1)
+
+pip install -r backend\requirements.txt
+pip install -r frontend\requirements.txt
+3) Start backend API (Terminal 1)
+
+cd backend
+python -m uvicorn main:app --host 127.0.0.1 --port 8000
+4) Start Streamlit UI (Terminal 2)
+
+cd frontend
+python -m streamlit run [app.py](http://_vscodecontentref_/2) --server.port 8501
+5) Open app (Terminal 3, optional check)
+
+start http://127.0.0.1:8501
+Health check: Invoke-WebRequest http://127.0.0.1:8000/health
+Optional data/model rebuild (if needed)
+
+python src\prepare_from_archive.py
+python src\train.py
+
+
+
+
+
+
+
 Product Return Risk Prediction – Minimal End‑to‑End Project
 ===========================================================
 
@@ -271,21 +301,6 @@ if st.button("Predict Return Risk"):
         st.error("Error calling prediction API")
 ```
 
-Run this frontend with:
-
-streamlit run frontend_app.py
-
-Make sure the FastAPI backend is running at http://localhost:8000.
-
-
-6. Minimal Requirements
------------------------
-
-You can install required packages with:
-
-```bash
-pip install pandas scikit-learn joblib fastapi uvicorn streamlit requests
-```
 
 
 7. End‑to‑End Workflow Summary
